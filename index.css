@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
 
+/* Default Theme (Light Mode) */
+:root {
+    --bg-color: #FED9B7;
+    --container-bg: #FDFCDC;
+    --text-color: black;
+    --border-color: #F07167;
+}
+
 body {
-    background-color: #FED9B7;
-    overflow: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: "Klee One", serif;
     font-weight: 400;
     font-style: normal;
@@ -24,27 +32,17 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     width: 90%;
     max-width: 400px;
-    height: auto;
-    background-color: #FDFCDC;
+    background-color: var(--container-bg);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     text-align: center;
 }
 
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-top: 10px;
-    row-gap: 10px;
-}
-
+/* Profile Section */
 .profile img {
     width: 100px;
     height: 100px;
@@ -55,70 +53,68 @@ body {
 .profile p {
     font-size: 24px;
     font-weight: bold;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
+/* Links Section */
 .links {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    row-gap: 15px;
-    margin-top: 15px;
     width: 100%;
+    margin-top: 20px;
 }
 
-.link_cont {
+.links .link_cont {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80%;
     max-width: 250px;
     height: 40px;
-    border: 3px solid #F07167;
+    border: 3px solid var(--border-color);
     border-radius: 10px;
     transition: all 0.3s ease;
-}
-
-.link_cont:hover {
-    background-color: #F07167;
+    margin: 5px 0;
 }
 
 .link_cont a {
-    margin: 2px;
     text-decoration: none;
-    color: #F07167;
+    color: var(--border-color);
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease;
+}
+
+.link_cont:hover {
+    background-color: var(--border-color);
 }
 
 .link_cont:hover a {
     color: white;
 }
 
+/* Social Icons */
 .socials {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
     width: 100%;
     margin-top: 20px;
 }
 
-.fa {
-    padding: 15px;
-    font-size: 40px;
-    width: 40px;
+.socials a {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.fa:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
+    margin: 5px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
 }
 
 .fa-facebook {
@@ -141,28 +137,69 @@ body {
     color: white;
 }
 
+.socials a:hover {
+    opacity: 0.7;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--border-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    opacity: 0.8;
+}
+
+/* Dark Theme */
+.dark-mode {
+    --bg-color: #2B2B2B;
+    --container-bg: #3E3E3E;
+    --text-color: white;
+    --border-color: #FF6B6B;
+}
+
 /* Responsive Design */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .container {
-        width: 95%;
-        max-width: 350px;
+        width: 90%;
+        max-width: 320px;
+        padding: 15px;
+    }
+
+    .profile img {
+        width: 80px;
+        height: 80px;
     }
 
     .profile p {
         font-size: 20px;
     }
 
-    .link_cont {
-        width: 90%;
+    .links .link_cont {
         height: 35px;
-    }
-
-    .link_cont a {
         font-size: 16px;
     }
 
-    .fa {
-        font-size: 30px;
-        padding: 10px;
+    .socials a {
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }
