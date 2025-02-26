@@ -6,6 +6,7 @@
     --container-bg: #FDFCDC;
     --text-color: black;
     --border-color: #F07167;
+    --profile-color: #FFF;
 }
 
 body {
@@ -54,6 +55,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0;
+    color: var(--profile-color)
 }
 
 /* Links Section */
@@ -81,7 +83,7 @@ body {
 .link_cont a {
     text-decoration: none;
     color: var(--border-color);
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -167,6 +169,7 @@ body {
     --container-bg: #3E3E3E;
     --text-color: white;
     --border-color: #FF6B6B;
+    --profile-color: #000;
 }
 
 /* Responsive Design */
